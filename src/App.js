@@ -33,6 +33,9 @@ class App extends React.Component {
 
                }
              })
+
+             console.log(this.state)
+
            })
 
            
