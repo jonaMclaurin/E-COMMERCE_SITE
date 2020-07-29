@@ -4,18 +4,20 @@ import 'firebase/auth'
 
 
 const config = {
-    apiKey: "AIzaSyAdcjuuQbBvCtuOSy84dGfZqR0uR_37LAQ",
-    authDomain: "crwn-db-77c68.firebaseapp.com",
-    databaseURL: "https://crwn-db-77c68.firebaseio.com",
-    projectId: "crwn-db-77c68",
-    storageBucket: "crwn-db-77c68.appspot.com",
-    messagingSenderId: "845059726668",
-    appId: "1:845059726668:web:a1ec9e22e0c059c72703e9",
-    measurementId: "G-0PBTJ5E5J8"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_ID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID
   };
 
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
+    
+    
     if(!userAuth) return;
 
     const userRef = firestore.doc(`users/${userAuth.uid}`)
